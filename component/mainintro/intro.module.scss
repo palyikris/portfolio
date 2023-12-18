@@ -1,0 +1,148 @@
+@import "../../uniform/style";
+
+
+.container {
+    @include centerDiv(column);
+    padding-top: 15vmin;
+
+    .mainWrapper {
+        @include centerDiv(row);
+
+        .mainText {
+            @include centerDiv(column);
+            align-items: flex-start;
+            padding-left: 8vmin;
+
+            h1 {
+                font-size: 60px;
+                margin-bottom: 3vmin;
+                color: $font;
+                padding-left: 5vmin;
+                text-shadow: 0px 2px 1px $main,
+                    1px 3px 1px $main,
+                    2px 5px 1px $main,
+                    3px 7px 1px $main,
+                ;
+
+
+                span {
+                    color: $main;
+                    text-shadow: none;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                opacity: 0.8;
+                width: 90%;
+                padding-left: 5vmin;
+
+
+                span {
+                    color: $main;
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: $font;
+                    color: $main;
+                    font-size: inherit;
+                    text-decoration: underline;
+                    transition: all 0.4s ease-in-out;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 200%;
+                        height: 200%;
+                        border: 1px solid $main;
+                        top: -50%;
+                        left: -50%;
+                        transform: scale(0);
+                        transition: all 0.4s ease-in-out;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        margin-left: 1vmin;
+
+                        &::after {
+                            transform: scale(1);
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .imgWrapper {
+            @include centerDiv(column);
+            align-items: flex-end;
+            padding-right: 20vmin;
+
+            .img {
+                width: auto;
+                height: 50vmin;
+                width: 40vmin;
+                display: block;
+                background-image: url("./comicme.png");
+                @include centerImg();
+                background-size: contain;
+                background-position: bottom;
+                background-color: $bg;
+                // border-radius: 30% 70% 47% 53% / 43% 30% 70% 57%;
+                // transition: all 0.4s ease-in-out;
+                // animation-name: borderChange;
+                // animation-duration: 10s;
+                // animation-iteration-count: infinite;
+                // animation-direction: alternate;
+                // animation-timing-function: ease-in-out;
+                // animation-fill-mode: forwards;
+                display: block;
+                object-fit: cover;
+                margin: 1vmin 0;
+                position: relative;
+                border-radius: 10px;
+
+                &::before {
+                    content: "";
+                    background: linear-gradient(130deg, $main, $sec);
+                    position: absolute;
+                    top: -8px;
+                    left: -8px;
+                    width: calc(100% + 16px);
+                    height: calc(100% + 16px);
+                    z-index: -1;
+                    border-radius: 10px;
+
+                }
+            }
+
+        }
+    }
+}
+
+
+@keyframes borderChange {
+    0% {
+        border-radius: 30% 70% 47% 53% / 43% 30% 70% 57%;
+    }
+
+    25% {
+        border-radius: 30% 70% 35% 65% / 66% 12% 88% 34%;
+    }
+
+    50% {
+        border-radius: 21% 79% 24% 76% / 81% 12% 88% 19%;
+    }
+
+    75% {
+        border-radius: 29% 71% 19% 81% / 78% 22% 78% 22%;
+    }
+
+    100% {
+        border-radius: 30% 70% 47% 53% / 43% 30% 70% 57%;
+    }
+}

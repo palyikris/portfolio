@@ -1,0 +1,16 @@
+.code {
+  font-family: "Grandiflora One", cursive;
+  color: #28FF00;
+  opacity: 0.6;
+  transition: all 0.4s ease-in-out;
+  font-style: italic;
+}
+.code span {
+  transition: all 0.4s ease-in-out;
+}
+.code:hover {
+  opacity: 1;
+}
+.code:hover span {
+  margin: 0 0.5vmin;
+}/*# sourceMappingURL=code.module.css.map */

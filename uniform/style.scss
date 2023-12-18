@@ -1,0 +1,21 @@
+$main: #28FF00;
+$sec: #0077FF;
+$ter: #FF3492;
+$bg: #001220;
+$font: #F5FBF2;
+$mix: color-mix(in srgb, $main -50%, $sec 50%);
+
+@mixin centerDiv($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: $direction;
+}
+
+
+@mixin centerImg() {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

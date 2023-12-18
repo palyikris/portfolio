@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .sep {
+  width: 80%;
+  height: 1px;
+  box-shadow: 0 0 3px 1px rgba(40, 255, 0, 0.7);
+  margin: 15vmin 0;
+  background-color: #28FF00;
+  position: relative;
+}/*# sourceMappingURL=page.module.css.map */
