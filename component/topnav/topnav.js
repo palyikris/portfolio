@@ -28,7 +28,7 @@ export default function TopNav() {
       )
     },
     {
-      href: "/#about",
+      href: "/about",
       textHun: "Rólam",
       textEng: "About",
       svg: (

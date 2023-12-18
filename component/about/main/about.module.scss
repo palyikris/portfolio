@@ -1,1 +1,7 @@
 @import "../../../uniform/style";
+
+
+.container {
+    @include centerDiv(column);
+    padding-top: 15vmin;
+}

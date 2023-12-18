@@ -1,0 +1,74 @@
+@import "../../uniform/style";
+
+
+.container {
+    @include centerDiv(row);
+    box-shadow: 0 0 10px 3px rgba($main, 0.7);
+    margin-top: 15vmin;
+    padding: 8vmin 1vmin;
+
+
+    .dataWrapper {
+        @include centerDiv(row);
+
+        &:last-child {
+            flex-wrap: wrap;
+
+            border-left: 1.5px solid $main;
+        }
+
+        .contact {
+            @include centerDiv(row);
+            margin: 0 3vmin;
+
+            svg {
+                width: 3vmin;
+                color: $main;
+            }
+
+            p {
+                color: $main;
+                margin-left: 1vmin;
+            }
+
+        }
+
+        .links {
+            @include centerDiv(row);
+            width: auto;
+            margin: 0 5vmin;
+
+            a {
+                color: $main;
+                text-decoration: none;
+                margin: 2vmin 1vmin;
+                position: relative;
+                transition: all 0.3s ease-in-out 0s;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    bottom: -1vmin;
+                    background-color: $main;
+                    transition: all 0.3s ease-in-out 0s;
+                    z-index: 10;
+                    left: calc(50% - 1px);
+                    transition: all 0.3s ease-in-out 0s;
+                    opacity: 0;
+                    border-radius: 100%;
+                }
+
+                &:hover {
+                    transform: translateY(-.5vmin);
+
+                    &::after {
+                        opacity: 1;
+                        transform: translateY(.5vmin);
+                    }
+                }
+            }
+        }
+    }
+}

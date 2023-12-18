@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"about.module.css"}
+{"version":3,"sources":["about.module.scss","../../../uniform/style.scss","about.module.css"],"names":[],"mappings":"AAGA;ECKI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,sBDRmB;EACnB,mBAAA;AEEJ","file":"about.module.css"}

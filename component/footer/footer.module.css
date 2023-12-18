@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  box-shadow: 0 0 10px 3px rgba(40, 255, 0, 0.7);
+  margin-top: 15vmin;
+  padding: 8vmin 1vmin;
+}
+.container .dataWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .dataWrapper:last-child {
+  flex-wrap: wrap;
+  border-left: 1.5px solid #28FF00;
+}
+.container .dataWrapper .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin: 0 3vmin;
+}
+.container .dataWrapper .contact svg {
+  width: 3vmin;
+  color: #28FF00;
+}
+.container .dataWrapper .contact p {
+  color: #28FF00;
+  margin-left: 1vmin;
+}
+.container .dataWrapper .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  margin: 0 5vmin;
+}
+.container .dataWrapper .links a {
+  color: #28FF00;
+  text-decoration: none;
+  margin: 2vmin 1vmin;
+  position: relative;
+  transition: all 0.3s ease-in-out 0s;
+}
+.container .dataWrapper .links a::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  bottom: -1vmin;
+  background-color: #28FF00;
+  transition: all 0.3s ease-in-out 0s;
+  z-index: 10;
+  left: calc(50% - 1px);
+  transition: all 0.3s ease-in-out 0s;
+  opacity: 0;
+  border-radius: 100%;
+}
+.container .dataWrapper .links a:hover {
+  transform: translateY(-0.5vmin);
+}
+.container .dataWrapper .links a:hover::after {
+  opacity: 1;
+  transform: translateY(0.5vmin);
+}/*# sourceMappingURL=footer.module.css.map */

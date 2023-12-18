@@ -1,14 +1,16 @@
 "use client";
 
-import TopNav from "./../component/topnav/topnav";
-import MainIntro from "./../component/mainintro/intro";
 import styles from "./page.module.css";
-import AboutPage from "./../component/about/main/about";
-import Footer from "./../component/footer/footer";
-import { useEffect, useState } from "react";
+import TopNav from "./../../component/topnav/topnav";
+import { useLangContext } from "@/context/langcontexthook";
+import Footer from "./../../component/footer/footer";
+import AboutPageComp from "./../../component/about/main/about";
 import Preload from "@/component/preload/preload";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function AboutPage() {
+  let { isHungarian } = useLangContext();
+
   let [preload, setPreload] = useState(true);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <TopNav />
-      <MainIntro />
+      <AboutPageComp />
       <Footer />
     </div>
   );
