@@ -8,8 +8,9 @@ import * as THREE from "three";
 export default function Preload() {
   const mountRef = useRef(null);
   const [progress, setProgress] = useState(0);
+  let [loading, setLoading] = useState(true);
 
-  let { isHungarian } = useLangContext();
+  let { isHungarian, setIsPreloader } = useLangContext();
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -29,6 +30,9 @@ export default function Preload() {
       new THREE.LineBasicMaterial({ color: 0x28ff00 })
     );
 
+    line.rotation.x = Math.random();
+    line.rotation.y = Math.random();
+
     scene.add(line);
 
     camera.position.z = 5;
@@ -46,6 +50,7 @@ export default function Preload() {
     mountRef.current.appendChild(renderer.domElement);
 
     animate();
+    setLoading(false);
 
     const interval = setInterval(() => {
       setProgress(oldProgress => {
@@ -63,6 +68,20 @@ export default function Preload() {
       } catch (error) {}
     };
   }, []);
+
+  if (progress === 100) {
+    setTimeout(() => {
+      setIsPreloader(false);
+    }, 200);
+  }
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <div ref={mountRef} className={styles.canvas} />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>

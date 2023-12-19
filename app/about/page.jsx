@@ -9,17 +9,9 @@ import Preload from "@/component/preload/preload";
 import { useEffect, useState } from "react";
 
 export default function AboutPage() {
-  let { isHungarian } = useLangContext();
+  let { isHungarian, isPreloader } = useLangContext();
 
-  let [preload, setPreload] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPreload(false);
-    }, 1500);
-  }, []);
-
-  if (preload) {
+  if (isPreloader) {
     return <Preload />;
   }
 

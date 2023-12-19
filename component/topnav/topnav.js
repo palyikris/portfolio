@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useLangContext } from "@/context/langcontexthook";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./topnav.module.css";
 import Code from "./../code/code";
 
 export default function TopNav() {
   let path = usePathname();
-  let { isHungarian, setIsHungarian } = useLangContext();
+  let { isHungarian, setIsHungarian, setIsPreloader } = useLangContext();
+  let router = useRouter();
 
   const links = [
     {
@@ -113,12 +114,15 @@ export default function TopNav() {
           return (
             <div key={link.href} className={styles.nav}>
               {link.svg}
-              <Link
-                href={link.href}
+              <button
+                onClick={() => {
+                  setIsPreloader(true);
+                  router.push(link.href);
+                }}
                 className={path === link.href ? styles.activeLink : styles.link}
               >
                 {isHungarian ? link.textHun : link.textEng}
-              </Link>
+              </button>
             </div>
           );
         })}

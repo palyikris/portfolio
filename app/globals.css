@@ -3,11 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: 'Prompt', sans-serif;
 }
 
+
 body{
-  background-color: #001220;
-  font-family: 'Prompt', sans-serif;
+  background-color: #001220;  /* font-family: 'Grandiflora One', cursive; */
   color: #F5FBF2;
-  /* font-family: 'Grandiflora One', cursive; */
 }
